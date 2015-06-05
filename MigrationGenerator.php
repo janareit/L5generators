@@ -1,7 +1,7 @@
-<?php namespace Pingpong\Generators;
+<?php namespace janareit\laravel5generators;
 
-use Pingpong\Generators\Migrations\NameParser;
-use Pingpong\Generators\Migrations\SchemaParser;
+use janareit\laravel5generators\Migrations\NameParser;
+use janareit\laravel5generators\Migrations\SchemaParser;
 
 class MigrationGenerator extends Generator
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Pingpong\Generators\Console;
+namespace janareit\laravel5generators\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Composer;
-use Pingpong\Generators\MigrationGenerator;
+use janareit\laravel5generators\MigrationGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

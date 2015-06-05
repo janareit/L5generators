@@ -1,7 +1,7 @@
-<?php namespace Pingpong\Generators\Console;
+<?php namespace janareit\laravel5generators\Console;
 
 use Illuminate\Console\Command;
-use Pingpong\Generators\ViewGenerator;
+use janareit\laravel5generators\ViewGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

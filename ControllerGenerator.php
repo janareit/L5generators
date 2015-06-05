@@ -1,6 +1,6 @@
-<?php namespace Pingpong\Generators;
+<?php namespace janareit\laravel5generators;
 
-use Pingpong\Generators\Scaffolders\ControllerScaffolder;
+use janareit\laravel5generators\Scaffolders\ControllerScaffolder;
 
 class ControllerGenerator extends Generator
 {

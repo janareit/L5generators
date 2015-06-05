@@ -1,6 +1,6 @@
-<?php namespace Pingpong\Generators;
+<?php namespace janareit\laravel5generators;
 
-use Pingpong\Generators\Migrations\SchemaParser;
+use janareit\laravel5generators\Migrations\SchemaParser;
 
 class ModelGenerator extends Generator
 {

@@ -1,6 +1,6 @@
-<?php namespace Pingpong\Generators\FormDumpers;
+<?php namespace janareit\laravel5generators\FormDumpers;
 
-use Pingpong\Generators\Stub;
+use janareit\laravel5generators\Stub;
 
 trait StubTrait
 {

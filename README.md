@@ -23,8 +23,13 @@ PS: To correctly edit `RouteServiceProvider.php` file you need to add a comment 
 ```
 Scaffolding will then add lines after this comment line.
 
+PS2: Add provider to app.php config
+```
+'janareit\laravel5generators\GeneratorsServiceProvider'
+```
 
-From console for example:
+
+## Run from console for example:
 ```
 php artisan generate:scaffold Machine --fields="name:string, number:tinyInteger:unsigned, active:boolean"
 --prefix=Master data/Manufacturing --force --extends="layouts.master" --no-question

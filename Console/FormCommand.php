@@ -1,9 +1,9 @@
 <?php
 
-namespace Pingpong\Generators\Console;
+namespace janareit\laravel5generators\Console;
 
 use Illuminate\Console\Command;
-use Pingpong\Generators\FormGenerator;
+use janareit\laravel5generators\FormGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

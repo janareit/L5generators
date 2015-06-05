@@ -1,11 +1,11 @@
-<?php namespace Pingpong\Generators;
+<?php namespace janareit\laravel5generators;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
-use Pingpong\Generators\FormDumpers\FieldsDumper;
-use Pingpong\Generators\FormDumpers\TableDumper;
-use Pingpong\Generators\FormGenerator;
-use Pingpong\Generators\Scaffolders\ControllerScaffolder;
+use janareit\laravel5generators\FormDumpers\FieldsDumper;
+use janareit\laravel5generators\FormDumpers\TableDumper;
+use janareit\laravel5generators\FormGenerator;
+use janareit\laravel5generators\Scaffolders\ControllerScaffolder;
 
 class ScaffoldGenerator
 {

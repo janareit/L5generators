@@ -1,4 +1,4 @@
-<?php namespace Pingpong\Generators;
+<?php namespace janareit\laravel5generators;
 
 use Exception;
 

@@ -1,4 +1,4 @@
-<?php namespace Pingpong\Generators\Scaffolders;
+<?php namespace janareit\laravel5generators\Scaffolders;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Str;

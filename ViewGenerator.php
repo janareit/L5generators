@@ -1,6 +1,6 @@
-<?php namespace Pingpong\Generators;
+<?php namespace janareit\laravel5generators;
 
-use Pingpong\Generators\Stub;
+use janareit\laravel5generators\Stub;
 
 class ViewGenerator extends Generator
 {

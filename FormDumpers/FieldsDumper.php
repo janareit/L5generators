@@ -1,7 +1,7 @@
-<?php namespace Pingpong\Generators\FormDumpers;
+<?php namespace janareit\laravel5generators\FormDumpers;
 
-use Pingpong\Generators\Migrations\SchemaParser;
-use Pingpong\Generators\Stub;
+use janareit\laravel5generators\Migrations\SchemaParser;
+use janareit\laravel5generators\Stub;
 
 class FieldsDumper
 {

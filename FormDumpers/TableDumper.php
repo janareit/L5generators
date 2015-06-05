@@ -1,7 +1,7 @@
-<?php namespace Pingpong\Generators\FormDumpers;
+<?php namespace janareit\laravel5generators\FormDumpers;
 
 use Illuminate\Support\Facades\DB;
-use Pingpong\Generators\Stub;
+use janareit\laravel5generators\Stub;
 
 class TableDumper
 {

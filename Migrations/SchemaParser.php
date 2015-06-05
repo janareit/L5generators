@@ -1,4 +1,4 @@
-<?php namespace Pingpong\Generators\Migrations;
+<?php namespace janareit\laravel5generators\Migrations;
 
 use Illuminate\Contracts\Support\Arrayable;
 

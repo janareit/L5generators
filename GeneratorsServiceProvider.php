@@ -1,4 +1,4 @@
-<?php namespace Pingpong\Generators;
+<?php namespace janareit\laravel5generators;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -31,7 +31,7 @@ class GeneratorsServiceProvider extends ServiceProvider
     public function register()
     {
         foreach ($this->consoles as $console) {
-            $this->commands('Pingpong\Generators\Console\\'.$console.'Command');
+            $this->commands('janareit\laravel5generators\Console\\'.$console.'Command');
         }
     }
 }
