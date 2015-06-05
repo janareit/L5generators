@@ -1,5 +1,5 @@
 {
-  "name": "janareit/L5generators",
+  "name": "janareit/laravel5generators",
   "description": "Laravel 5 Generators",
   "license": "BSD-3-Clause",
   "keywords": [
@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "janareit\\L5generators\\": ""
+      "janareit\\laravel5generators\\": ""
     }
   },
   "minimum-stability": "stable"
