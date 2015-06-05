@@ -1,9 +1,8 @@
-<?php
-
-namespace Pingpong\Generators\Migrations;
+<?php namespace Pingpong\Generators\Migrations;
 
 class NameParser
 {
+
     /**
      * The migration name.
      *
@@ -26,22 +25,22 @@ class NameParser
     protected $actions = [
         'create' => [
             'create',
-            'make',
+            'make'
         ],
         'delete' => [
             'delete',
-            'remove',
+            'remove'
         ],
         'add' => [
             'add',
             'update',
             'append',
-            'insert',
+            'insert'
         ],
         'drop' => [
             'destroy',
-            'drop',
-        ],
+            'drop'
+        ]
     ];
 
     /**
@@ -105,7 +104,7 @@ class NameParser
     public function getMatches()
     {
         preg_match($this->getPattern(), $this->name, $matches);
-
+        
         return $matches;
     }
 
@@ -123,7 +122,7 @@ class NameParser
             case 'insert':
                 return "/{$action}_(.*)_to_(.*)_table/";
                 break;
-
+            
             case 'delete':
             case 'remove':
             case 'alter':
@@ -160,7 +159,6 @@ class NameParser
      * Determine whether the given type is same with the current schema action or type.
      *
      * @param $type
-     *
      * @return bool
      */
     public function is($type)

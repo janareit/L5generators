@@ -1,6 +1,4 @@
-<?php
-
-namespace Pingpong\Generators\FormDumpers;
+<?php namespace Pingpong\Generators\FormDumpers;
 
 use Pingpong\Generators\Stub;
 

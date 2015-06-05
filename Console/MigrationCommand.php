@@ -10,6 +10,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class MigrationCommand extends Command
 {
+
     /**
      * The name of command.
      *
@@ -26,6 +27,8 @@ class MigrationCommand extends Command
 
     /**
      * Execute the command.
+     *
+     * @return void
      */
     public function fire(Composer $composer)
     {
@@ -37,7 +40,7 @@ class MigrationCommand extends Command
 
         $generator->run();
 
-        $this->info('Migration created successfully.');
+        $this->info("Migration created successfully.");
 
         $composer->dumpAutoloads();
     }

@@ -1,6 +1,4 @@
-<?php
-
-namespace Pingpong\Generators\Console;
+<?php namespace Pingpong\Generators\Console;
 
 use Illuminate\Console\Command;
 use Pingpong\Generators\ScaffoldGenerator;
@@ -9,6 +7,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class ScaffoldCommand extends Command
 {
+
     /**
      * The name of command.
      *
@@ -25,6 +24,8 @@ class ScaffoldCommand extends Command
 
     /**
      * Execute the command.
+     *
+     * @return void
      */
     public function fire()
     {
@@ -55,6 +56,7 @@ class ScaffoldCommand extends Command
             ['prefix', null, InputOption::VALUE_OPTIONAL, 'The prefix path & routes.', null],
             ['no-question', null, InputOption::VALUE_NONE, 'Don\'t ask any question.', null],
             ['force', 'f', InputOption::VALUE_NONE, 'Force the creation if file already exists.', null],
+            ['extends', 'e', InputOption::VALUE_OPTIONAL, 'Which master layout to use.', null],
         ];
     }
 }

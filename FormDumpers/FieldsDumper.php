@@ -1,6 +1,4 @@
-<?php
-
-namespace Pingpong\Generators\FormDumpers;
+<?php namespace Pingpong\Generators\FormDumpers;
 
 use Pingpong\Generators\Migrations\SchemaParser;
 use Pingpong\Generators\Stub;
@@ -65,7 +63,7 @@ class FieldsDumper
             if (in_array($name, $this->ignores)) {
                 continue;
             }
-
+            
             $results .= "\t\t\t".'<th>'.ucwords($name).'</th>'.PHP_EOL;
         }
 

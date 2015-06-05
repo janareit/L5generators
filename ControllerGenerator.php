@@ -1,11 +1,10 @@
-<?php
-
-namespace Pingpong\Generators;
+<?php namespace Pingpong\Generators;
 
 use Pingpong\Generators\Scaffolders\ControllerScaffolder;
 
 class ControllerGenerator extends Generator
 {
+
     /**
      * Get stub name.
      *
@@ -15,6 +14,8 @@ class ControllerGenerator extends Generator
 
     /**
      * Configure some data.
+     *
+     * @return void
      */
     public function setUp()
     {
@@ -37,7 +38,7 @@ class ControllerGenerator extends Generator
 
         array_pop($paths);
 
-        return strtolower(implode('\\', $paths));
+        return implode('\\', $paths);
     }
 
     /**

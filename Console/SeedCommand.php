@@ -1,6 +1,4 @@
-<?php
-
-namespace Pingpong\Generators\Console;
+<?php namespace Pingpong\Generators\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Composer;

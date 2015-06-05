@@ -4,7 +4,7 @@ use $ROOT_NAMESPACE$Http\Requests;
 use $ROOT_NAMESPACE$Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use $ROOT_NAMESPACE$$STUDLY_ENTITY$;
+use $ROOT_NAMESPACE$Repositories\$PREFIX_SLASH$$STUDLY_ENTITY$;
 use $ROOT_NAMESPACE$Http\Requests\$PREFIX_SLASH$$STUDLY_PLURAL_ENTITY$\Create$STUDLY_ENTITY$Request;
 use $ROOT_NAMESPACE$Http\Requests\$PREFIX_SLASH$$STUDLY_PLURAL_ENTITY$\Update$STUDLY_ENTITY$Request;
 
@@ -54,39 +54,33 @@ class $CLASS$ extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int  $$LOWER_SINGULAR_ENTITY$
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($STUDLY_ENTITY$ $$LOWER_SINGULAR_ENTITY$)
 	{
-		$$LOWER_SINGULAR_ENTITY$ = $STUDLY_ENTITY$::findOrFail($id);
-
 		return view('$PREFIX_DOT$$LOWER_ENTITIES$.show', compact('$LOWER_SINGULAR_ENTITY$'));
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int  $$LOWER_SINGULAR_ENTITY$
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($STUDLY_ENTITY$ $$LOWER_SINGULAR_ENTITY$)
 	{
-		$$LOWER_SINGULAR_ENTITY$ = $STUDLY_ENTITY$::findOrFail($id);
-	
 		return view('$PREFIX_DOT$$LOWER_ENTITIES$.edit', compact('$LOWER_SINGULAR_ENTITY$'));
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  int  $$LOWER_SINGULAR_ENTITY$
 	 * @return Response
 	 */
-	public function update(Update$STUDLY_ENTITY$Request $request, $id)
-	{		
-		$$LOWER_SINGULAR_ENTITY$ = $STUDLY_ENTITY$::findOrFail($id);
-
+	public function update(Update$STUDLY_ENTITY$Request $request, $STUDLY_ENTITY$ $$LOWER_SINGULAR_ENTITY$)
+	{
 		$$LOWER_SINGULAR_ENTITY$->update($request->all());
 
 		return redirect()->route('$PREFIX_DOT$$LOWER_ENTITIES$.index');
@@ -95,13 +89,11 @@ class $CLASS$ extends Controller {
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param  int  $$LOWER_SINGULAR_ENTITY$
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($STUDLY_ENTITY$ $$LOWER_SINGULAR_ENTITY$)
 	{
-		$$LOWER_SINGULAR_ENTITY$ = $STUDLY_ENTITY$::findOrFail($id);
-		
 		$$LOWER_SINGULAR_ENTITY$->delete();
 	
 		return redirect()->route('$PREFIX_DOT$$LOWER_ENTITIES$.index');

@@ -1,9 +1,8 @@
-<?php
-
-namespace Pingpong\Generators;
+<?php namespace Pingpong\Generators;
 
 class SeedGenerator extends Generator
 {
+
     /**
      * Get stub name.
      *

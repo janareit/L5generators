@@ -1,12 +1,11 @@
-<?php
-
-namespace Pingpong\Generators\Scaffolders;
+<?php namespace Pingpong\Generators\Scaffolders;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Str;
 
 class ControllerScaffolder implements Arrayable
 {
+
     /**
      * The name of controller.
      *
@@ -31,7 +30,7 @@ class ControllerScaffolder implements Arrayable
     /**
      * The constructor.
      *
-     * @param string      $name
+     * @param string $name
      * @param string|null $prefix
      */
     public function __construct($name, $prefix = null)
@@ -108,7 +107,9 @@ class ControllerScaffolder implements Arrayable
      */
     public function getPrefixDot()
     {
-        return $this->prefix ? $this->prefix.'.' : '';
+        $prefix = str_replace('\\', '.', $this->prefix);
+        $prefix = str_replace('/', '.', $prefix);
+        return $this->prefix ? strtolower( $prefix.'.') : '';
     }
 
     /**

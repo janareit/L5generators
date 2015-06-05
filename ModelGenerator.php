@@ -1,11 +1,10 @@
-<?php
-
-namespace Pingpong\Generators;
+<?php namespace Pingpong\Generators;
 
 use Pingpong\Generators\Migrations\SchemaParser;
 
 class ModelGenerator extends Generator
 {
+
     /**
      * Get stub name.
      *
@@ -32,7 +31,7 @@ class ModelGenerator extends Generator
     {
         return $this->getBasePath().'/'.$this->getName().'.php';
     }
-
+    
     /**
      * Get array replacements.
      *
@@ -41,7 +40,7 @@ class ModelGenerator extends Generator
     public function getReplacements()
     {
         return array_merge(parent::getReplacements(), [
-            'fillable' => $this->getFillable(),
+            'fillable' => $this->getFillable()
         ]);
     }
 
@@ -62,12 +61,12 @@ class ModelGenerator extends Generator
      */
     public function getFillable()
     {
-        if (!$this->fillable) {
+        if (! $this->fillable) {
             return '[]';
         }
 
         $results = '['.PHP_EOL;
-
+        
         foreach ($this->getSchemaParser()->toArray() as $column => $value) {
             $results .= "\t\t'{$column}',".PHP_EOL;
         }

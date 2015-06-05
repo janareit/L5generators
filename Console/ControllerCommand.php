@@ -1,6 +1,4 @@
-<?php
-
-namespace Pingpong\Generators\Console;
+<?php namespace Pingpong\Generators\Console;
 
 use Illuminate\Console\Command;
 use Pingpong\Generators\ControllerGenerator;
@@ -9,6 +7,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class ControllerCommand extends Command
 {
+
     /**
      * The name of command.
      *
@@ -25,6 +24,8 @@ class ControllerCommand extends Command
 
     /**
      * Execute the command.
+     *
+     * @return void
      */
     public function fire()
     {
@@ -37,7 +38,7 @@ class ControllerCommand extends Command
 
         $generator->run();
 
-        $this->info('Controller created successfully.');
+        $this->info("Controller created successfully.");
     }
 
     /**

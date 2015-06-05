@@ -1,6 +1,4 @@
-<?php
-
-namespace Pingpong\Generators\Console;
+<?php namespace Pingpong\Generators\Console;
 
 use Illuminate\Console\Command;
 use Pingpong\Generators\PivotGenerator;
@@ -9,6 +7,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class PivotCommand extends Command
 {
+
     /**
      * The name of command.
      *
@@ -25,6 +24,8 @@ class PivotCommand extends Command
 
     /**
      * Execute the command.
+     *
+     * @return void
      */
     public function fire()
     {
@@ -37,7 +38,7 @@ class PivotCommand extends Command
 
         $generator->run();
 
-        $this->info('Migration created successfully.');
+        $this->info("Migration created successfully.");
     }
 
     /**

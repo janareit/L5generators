@@ -1,6 +1,4 @@
-<?php
-
-namespace Pingpong\Generators\Console;
+<?php namespace Pingpong\Generators\Console;
 
 use Illuminate\Console\Command;
 use Pingpong\Generators\ModelGenerator;
@@ -9,6 +7,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class ModelCommand extends Command
 {
+
     /**
      * The name of command.
      *
@@ -25,6 +24,8 @@ class ModelCommand extends Command
 
     /**
      * Execute the command.
+     *
+     * @return void
      */
     public function fire()
     {
@@ -36,7 +37,7 @@ class ModelCommand extends Command
 
         $generator->run();
 
-        $this->info('Model created successfully.');
+        $this->info("Model created successfully.");
     }
 
     /**

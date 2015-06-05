@@ -1,6 +1,4 @@
-<?php
-
-namespace Pingpong\Generators\Console;
+<?php namespace Pingpong\Generators\Console;
 
 use Illuminate\Console\Command;
 use Pingpong\Generators\ViewGenerator;
@@ -9,6 +7,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class ViewCommand extends Command
 {
+
     /**
      * The name of command.
      *
@@ -25,6 +24,8 @@ class ViewCommand extends Command
 
     /**
      * Execute the command.
+     *
+     * @return void
      */
     public function fire()
     {
@@ -39,7 +40,7 @@ class ViewCommand extends Command
             'force' => $this->option('force'),
         ]))->run();
 
-        $this->info('View created successfully.');
+        $this->info("View created successfully.");
     }
 
     /**

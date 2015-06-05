@@ -1,11 +1,10 @@
-<?php
-
-namespace Pingpong\Generators;
+<?php namespace Pingpong\Generators;
 
 use Pingpong\Generators\Migrations\SchemaParser;
 
 class RequestGenerator extends Generator
 {
+
     /**
      * Get stub name.
      *
@@ -52,7 +51,7 @@ class RequestGenerator extends Generator
     {
         return array_merge(parent::getReplacements(), [
             'auth' => $this->getAuth(),
-            'rules' => $this->getRules(),
+            'rules' => $this->getRules()
         ]);
     }
 
@@ -75,7 +74,7 @@ class RequestGenerator extends Generator
      */
     public function getRules()
     {
-        if (!$this->rules) {
+        if (! $this->rules) {
             return 'return [];';
         }
 
@@ -95,9 +94,8 @@ class RequestGenerator extends Generator
     /**
      * Create a rule.
      *
-     * @param string $field
-     * @param string $rules
-     *
+     * @param  string $field
+     * @param  string $rules
      * @return string
      */
     protected function createRules($field, $rules)

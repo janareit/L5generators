@@ -1,11 +1,10 @@
-<?php
-
-namespace Pingpong\Generators;
+<?php namespace Pingpong\Generators;
 
 use Illuminate\Support\Str;
 
 class PivotGenerator extends Generator
 {
+
     /**
      * Get stub name.
      *
@@ -103,7 +102,7 @@ class PivotGenerator extends Generator
             'column_one' => $this->getColumnOne(),
             'column_two' => $this->getColumnTwo(),
             'table_pivot' => $this->getPivotTableName(),
-            'timestamp' => $this->getTimestampReplacement(),
+            'timestamp' => $this->getTimestampReplacement()
         ]);
     }
 
@@ -118,7 +117,7 @@ class PivotGenerator extends Generator
             return '$table->timestamps();';
         }
 
-        return;
+        return null;
     }
 
     /**

@@ -1,12 +1,11 @@
-<?php
-
-namespace Pingpong\Generators\FormDumpers;
+<?php namespace Pingpong\Generators\FormDumpers;
 
 use Illuminate\Support\Facades\DB;
 use Pingpong\Generators\Stub;
 
 class TableDumper
 {
+
     use StubTrait;
 
     /**
@@ -87,8 +86,7 @@ class TableDumper
     /**
      * Convert the fields to formatted php script.
      *
-     * @param string $var
-     *
+     * @param  string $var
      * @return string
      */
     public function toBody($var)
@@ -109,8 +107,7 @@ class TableDumper
     /**
      * Get replacements for $SHOW_BODY$.
      *
-     * @param string $var
-     *
+     * @param  string $var
      * @return string
      */
     public function toRows($var)
@@ -125,7 +122,7 @@ class TableDumper
             $results .= Stub::create(__DIR__.'/../Stubs/scaffold/row.stub', [
                 'label' => ucwords($name),
                 'column' => $name,
-                'var' => $var,
+                'var' => $var
             ])->render();
         }
 

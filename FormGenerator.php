@@ -1,12 +1,11 @@
-<?php
-
-namespace Pingpong\Generators;
+<?php namespace Pingpong\Generators;
 
 use Pingpong\Generators\FormDumpers\FieldsDumper;
 use Pingpong\Generators\FormDumpers\TableDumper;
 
 class FormGenerator
 {
+
     /**
      * The name of entity.
      *
