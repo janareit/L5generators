@@ -31,8 +31,7 @@ PS2: Add provider to app.php config
 
 ## Run from console for example:
 ```
-php artisan generate:scaffold Machine --fields="name:string, number:tinyInteger:unsigned, active:boolean"
---prefix=Master data/Manufacturing --force --extends="layouts.master" --no-question
+php artisan generate:scaffold Machine --fields="name:string, number:tinyInteger:unsigned, active:boolean" --prefix=Master data/Manufacturing --force --extends="layouts.master" --no-question
 ```
 
 This should output (no questions asked, as last flag declares):
