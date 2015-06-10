@@ -1,4 +1,5 @@
 Laravel 5 Generators
+(suitable for 5.1)
 ==============
 
 This is a custom fork from http://sky.pingpong-labs.com/docs/2.0/generators
@@ -8,7 +9,7 @@ Its forked for better match my own needs for quick scaffolding in different L5 p
 
 ### Additions/Changes from original:
 
-1. RouteModel binding functionality added
+1. RouteModel binding functionality added and scaffolded to existiong file
 2. Controller actions upgraded to inject Model classes to take use of RouteModelBindings
 3. 'extends' functionality for views now possible to input from scaffold command
 4. 'prefix' can be multi-level deep. For example `--prefix=Main/Admin`
@@ -17,13 +18,20 @@ Its forked for better match my own needs for quick scaffolding in different L5 p
 
 ### Example usage
 
-PS: To correctly edit `RouteServiceProvider.php` file you need to add a comment line inside your `boot` method:
+## Preparations:
+
+1. To correctly edit with scaffolding `RouteServiceProvider.php` file you need to add a comment line inside your `boot` method:
 ```
 //scaffolded routes will appear here [do not remove]
 ```
-Scaffolding will then add lines after this comment line.
 
-PS2: Add provider to app.php config
+2. Also `use` clause is needed at the beginning of `RouteServiceProvider.php`, so add a hook there as well:
+```
+//scaffolded use will appear here [do not remove]
+```
+Scaffolding will then add lines after these comment lines.
+
+3. Add provider to app.php config
 ```
 'janareit\laravel5generators\GeneratorsServiceProvider::class'
 ```

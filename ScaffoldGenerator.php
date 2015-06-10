@@ -385,6 +385,11 @@ class ScaffoldGenerator
            .'            return '. Str::studly($this->getEntity()) .'::findOrFail($id);'.PHP_EOL
            .'        });', $contents);
 
+        $contents = str_replace('//scaffolded use will appear here [do not remove]',
+            '//scaffolded use will appear here [do not remove]' . PHP_EOL
+            . 'use App\Repositories\\' . str_replace('/', '\\', $this->console->option('prefix'))
+            . '\\'.Str::studly($this->getEntity()) .';' . PHP_EOL, $contents);
+
         $this->laravel['files']->put($path, $contents);
 
         $this->console->info("RouteServiceProvider appended successfully.");
