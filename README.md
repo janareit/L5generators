@@ -1,6 +1,6 @@
 Laravel 5 Generators
-(suitable for 5.1)
 ==============
+(suitable for 5.1)
 
 This is a custom fork from http://sky.pingpong-labs.com/docs/2.0/generators
 Official documentation available from there.
