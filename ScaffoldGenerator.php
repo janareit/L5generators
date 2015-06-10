@@ -86,6 +86,22 @@ class ScaffoldGenerator
     }
 
     /**
+     * Get model name.
+     *
+     * @return string
+     */
+    public function getModelName()
+    {
+        $model = Str::studly($this->getEntity());
+
+        if ($this->console->option('prefix')) {
+            $model = Str::studly($this->getPrefix('/')).$model;
+        }
+
+        return str_replace('/', '\\', $model);
+    }
+
+    /**
      * Confirm a question with the user.
      *
      * @param  string $message
@@ -96,7 +112,7 @@ class ScaffoldGenerator
         if ($this->console->option('no-question')) {
             return true;
         }
-        
+
         return $this->console->confirm($message);
     }
 
@@ -335,7 +351,7 @@ class ScaffoldGenerator
     {
         if ($this->confirm('Do you want to run all migration now?')) {
             $this->migrated = true;
-            
+
             $this->console->call('migrate', [
                 '--force' => $this->console->option('force')
             ]);
@@ -381,14 +397,13 @@ class ScaffoldGenerator
 
         $contents = str_replace('//scaffolded routes will appear here [do not remove]',
             '//scaffolded routes will appear here [do not remove]'.PHP_EOL.PHP_EOL
-           .'        $router->bind(\''. $this->getEntities() .'\', function($id) {'.PHP_EOL
-           .'            return '. Str::studly($this->getEntity()) .'::findOrFail($id);'.PHP_EOL
-           .'        });', $contents);
+            .'        $router->bind(\''. $this->getEntities() .'\', function($id) {'.PHP_EOL
+            .'            return '. Str::studly($this->getEntity()) .'::findOrFail($id);'.PHP_EOL
+            .'        });', $contents);
 
         $contents = str_replace('//scaffolded use will appear here [do not remove]',
             '//scaffolded use will appear here [do not remove]' . PHP_EOL
-            . 'use App\Repositories\\' . str_replace('/', '\\', $this->console->option('prefix'))
-            . '\\'.Str::studly($this->getEntity()) .';' . PHP_EOL, $contents);
+            . 'use App\Repositories\\' . $this->getModelName() . ';' . PHP_EOL, $contents);
 
         $this->laravel['files']->put($path, $contents);
 
