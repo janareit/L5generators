@@ -25,7 +25,7 @@ Scaffolding will then add lines after this comment line.
 
 PS2: Add provider to app.php config
 ```
-'janareit\laravel5generators\GeneratorsServiceProvider'
+'janareit\laravel5generators\GeneratorsServiceProvider::class'
 ```
 
 
