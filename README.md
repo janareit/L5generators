@@ -2,6 +2,10 @@ Laravel 5 Generators
 ==============
 (suitable for 5.1)
 
+[![Latest Version](https://img.shields.io/github/release/janareit/laravel5generators.svg?style=flat-square)](https://github.com/janareit/laravel5generators/releases)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Total Downloads](https://img.shields.io/packagist/dt/janareit/laravel5generators.svg?style=flat-square)](https://packagist.org/packages/janareit/laravel5generators)
+
 This is a custom fork from http://sky.pingpong-labs.com/docs/2.0/generators
 Official documentation available from there.
 
