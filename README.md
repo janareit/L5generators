@@ -1,6 +1,6 @@
 Laravel 5 Generators
 ==============
-(suitable for 5.1)
+(suitable for 5.2)
 
 [![Latest Version](https://img.shields.io/github/release/janareit/laravel5generators.svg?style=flat-square)](https://github.com/janareit/laravel5generators/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
