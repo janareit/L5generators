@@ -29,13 +29,7 @@ Its forked for better match my own needs for quick scaffolding in different L5 p
 //scaffolded routes will appear here [do not remove]
 ```
 
-2. Also `use` clause is needed at the beginning of `RouteServiceProvider.php`, so add a hook there as well:
-```
-//scaffolded use will appear here [do not remove]
-```
-Scaffolding will then add lines after these comment lines.
-
-3. Add provider to app.php config
+2. Add provider to app.php config
 ```
 'janareit\laravel5generators\GeneratorsServiceProvider::class'
 ```
@@ -43,7 +37,7 @@ Scaffolding will then add lines after these comment lines.
 
 ## Run from console for example:
 ```
-php artisan generate:scaffold Machine --fields="name:string, number:tinyInteger:unsigned, active:boolean" --prefix=Master data/Manufacturing --force --extends="layouts.master" --no-question
+php artisan generate:scaffold site_machine --fields="name:string, number:tinyInteger:unsigned, active:boolean" --prefix=Masterdata/Manufacturing --force --extends="layouts.master" --no-question
 ```
 
 This should output (no questions asked, as last flag declares):
@@ -92,9 +86,7 @@ Route::resource('masterdata/manufacturing/machines', 'Masterdata\Manufacturing\M
 ```
 RouteServiceProvider.php
 
-$router->bind('machines', function($id) {
-    return Machine::findOrFail($id);
-});
+$router->model('machines', 'App/Repositories/Masterdata/Manufacturing/SiteMachine');
 ```
 
 If all worked out correctly you should be able to see your newly created CRUD pages at yourdomain/masterdata/manufacturing/machines url.

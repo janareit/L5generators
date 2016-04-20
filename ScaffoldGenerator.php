@@ -397,13 +397,8 @@ class ScaffoldGenerator
 
         $contents = str_replace('//scaffolded routes will appear here [do not remove]',
             '//scaffolded routes will appear here [do not remove]'.PHP_EOL.PHP_EOL
-            .'        $router->bind(\''. $this->getEntities() .'\', function($id) {'.PHP_EOL
-            .'            return '. Str::studly($this->getEntity()) .'::findOrFail($id);'.PHP_EOL
-            .'        });', $contents);
+            .'        $router->model(\''. $this->getEntities() .'\', \'App\Repositories\\'. $this->getModelName() .'\');', $contents);
 
-        $contents = str_replace('//scaffolded use will appear here [do not remove]',
-            '//scaffolded use will appear here [do not remove]' . PHP_EOL
-            . 'use App\Repositories\\' . $this->getModelName() . ';' . PHP_EOL, $contents);
 
         $this->laravel['files']->put($path, $contents);
 

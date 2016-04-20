@@ -47,7 +47,7 @@ class ControllerScaffolder implements Arrayable
      */
     public function getEntity()
     {
-        return Str::singular(str_replace('controller', '', strtolower($this->name)));
+        return Str::singular(str_replace('Controller', '', $this->name));
     }
 
     /**
@@ -67,7 +67,7 @@ class ControllerScaffolder implements Arrayable
      */
     public function getLowerEntities()
     {
-        return strtolower(Str::plural($this->entity));
+        return Str::plural(Str::snake($this->entity));
     }
 
     /**
@@ -77,7 +77,7 @@ class ControllerScaffolder implements Arrayable
      */
     public function getLowerSingularEntity()
     {
-        return strtolower(Str::singular($this->entity));
+        return Str::snake($this->entity);
     }
 
     /**
@@ -129,7 +129,7 @@ class ControllerScaffolder implements Arrayable
      */
     public function toArray()
     {
-        return [
+        $arr = [
             'prefix' => $this->prefix,
             'entity' => $this->entity,
             'lower_entities' => $this->getLowerEntities(),
@@ -139,5 +139,7 @@ class ControllerScaffolder implements Arrayable
             'prefix_dot' => $this->getPrefixDot(),
             'prefix_slash' => $this->getPrefixSlash(),
         ];
+
+        return $arr;
     }
 }

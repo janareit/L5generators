@@ -1,6 +1,7 @@
 <?php namespace janareit\laravel5generators;
 
 use janareit\laravel5generators\Stub;
+use Illuminate\Support\Str;
 
 class ViewGenerator extends Generator
 {
@@ -48,7 +49,9 @@ class ViewGenerator extends Generator
      */
     public function getPath()
     {
-        return $this->getBasePath().strtolower($this->getName()).'.blade.php';
+        $name = STR::snake($this->getName());
+        $name = str_replace('/_', '/', $name);
+        return $this->getBasePath().$name.'.blade.php';
     }
 
     /**
