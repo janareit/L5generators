@@ -208,7 +208,8 @@ class ScaffoldGenerator
             $this->console->call('generate:view', [
                 'name' => $this->getViewLayout(),
                 '--master' => true,
-                '--force' => $this->console->option('force')
+                '--force' => $this->console->option('force'),
+                '--responsive' => $this->console->option('responsive')
             ]);
         }
     }
@@ -230,7 +231,7 @@ class ScaffoldGenerator
      */
     public function getFormGenerator()
     {
-        return new FormGenerator($this->getEntities(), $this->console->option('fields'));
+        return new FormGenerator($this->getEntities(), $this->console->option('fields'), $this->console->option('responsive'));
     }
 
     /**
@@ -244,7 +245,7 @@ class ScaffoldGenerator
             return new TableDumper($this->getEntities());
         }
 
-        return new FieldsDumper($this->console->option('fields'));
+        return new FieldsDumper($this->console->option('fields'), $this->console->option('responsive'));
     }
 
     /**
@@ -273,11 +274,14 @@ class ScaffoldGenerator
      */
     public function generateView($view)
     {
+        $scaffold_type = $this->console->option('responsive') ? 'scaffold-responsive' : 'scaffold-table';
+
         $generator = new ViewGenerator([
             'name' => $this->getPrefix('/').$this->getEntities().'/'.$view,
             'extends' => str_replace('/', '.', $this->getViewLayout()),
-            'template' => __DIR__.'/Stubs/scaffold/views/'.$view.'.stub',
-            'force' => $this->console->option('force')
+            'template' => __DIR__.'/Stubs/'.$scaffold_type.'/views/'.$view.'.stub',
+            'force' => $this->console->option('force'),
+            'responsive' => $this->console->option('responsive')
         ]);
 
         $generator->appendReplacement(array_merge($this->getControllerScaffolder()->toArray(), [

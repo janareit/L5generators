@@ -38,6 +38,7 @@ class ViewCommand extends Command
             'content' => $this->option('content'),
             'template' => $this->option('template'),
             'force' => $this->option('force'),
+            'responsive' => $this->option('responsive'),
         ]))->run();
 
         $this->info("View created successfully.");

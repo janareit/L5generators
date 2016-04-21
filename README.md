@@ -9,7 +9,7 @@ Laravel 5 Generators
 This is a custom fork from http://sky.pingpong-labs.com/docs/2.0/generators
 Official documentation available from there.
 
-Its forked for better match my own needs for quick scaffolding in different L5 projects.
+Its forked for better match my own needs for quick scaffolding in different Laravel 5 projects.
 
 ### Additions/Changes from original:
 
@@ -18,6 +18,7 @@ Its forked for better match my own needs for quick scaffolding in different L5 p
 3. 'extends' functionality for views now possible to input from scaffold command
 4. 'prefix' can be multi-level deep. For example `--prefix=Main/Admin`
 5. Models stored to `App\Repositories` folder
+5. 'responsive' generates responsive index view instead of table style
 
 
 ### Example usage
@@ -37,8 +38,12 @@ Its forked for better match my own needs for quick scaffolding in different L5 p
 
 ## Run from console for example:
 ```
-php artisan generate:scaffold site_machine --fields="name:string, number:tinyInteger:unsigned, active:boolean" --prefix=Masterdata/Manufacturing --force --extends="layouts.master" --no-question
+php artisan generate:scaffold moulding_machine --fields="name:string, number:tinyInteger:unsigned, active:boolean" --prefix=Masterdata/Manufacturing --responsive --force --extends="layouts.master" --no-question
 ```
+
+**PS: layouts.master will be stored to views root directory for security reasons so you don't overwrite your original master by accident.
+If you don't have a layout master you should move it to `resources/views/layouts`**
+
 
 This should output (no questions asked, as last flag declares):
 ```
@@ -48,7 +53,7 @@ Seed created successfully.
 Form request created successfully.
 Form request created successfully.
 Controller created successfully.
-Migrated: 2015_06_05_113543_create_machines_table
+Migrated: 2015_06_05_113543_create_moulding_machines_table
 View created successfully.
 View created successfully.
 View created successfully.
@@ -62,17 +67,17 @@ RouteServiceProvider appended successfully.
 
 Generated files are:
 ```
-app/Http/Controllers/Masterdata/Manufacturing/MachinesController.php
-app/Http/Requests/Masterdata/Manufacturing/Machines/CreateMachineRequest.php
-app/Http/Requests/Masterdata/Manufacturing/Machines/UpdateMachineRequest.php
-app/Repositories/Masterdata/Manufacturing/Machine.php
-database/migrations/2015_06_05_113543_create_machines_table.php
-database/seeds/MachinesTableSeeder.php
-resources/views/masterdata/manufacturing/machines/create.blade.php
-resources/views/masterdata/manufacturing/machines/edit.blade.php
-resources/views/masterdata/manufacturing/machines/form.blade.php
-resources/views/masterdata/manufacturing/machines/index.blade.php
-resources/views/masterdata/manufacturing/machines/show.blade.php
+app/Http/Controllers/Masterdata/Manufacturing/MouldingMachinesController.php
+app/Http/Requests/Masterdata/Manufacturing/Machines/CreateMouldingMachineRequest.php
+app/Http/Requests/Masterdata/Manufacturing/Machines/UpdateMouldingMachineRequest.php
+app/Repositories/Masterdata/Manufacturing/MouldingMachine.php
+database/migrations/2015_06_05_113543_create_moulding_machines_table.php
+database/seeds/MouldingMachinesTableSeeder.php
+resources/views/masterdata/manufacturing/moulding_machines/create.blade.php
+resources/views/masterdata/manufacturing/moulding_machines/edit.blade.php
+resources/views/masterdata/manufacturing/moulding_machines/form.blade.php
+resources/views/masterdata/manufacturing/moulding_machines/index.blade.php
+resources/views/masterdata/manufacturing/moulding_machines/show.blade.php
 resources/views/layouts.master.blade.php //this is in case you generate new layout. For security it's not overwriting directly to layouts path.
 ```
 
@@ -80,16 +85,16 @@ Additions to existing files are:
 ```
 routes.php
 
-Route::resource('masterdata/manufacturing/machines', 'Masterdata\Manufacturing\MachinesController');
+Route::resource('masterdata/manufacturing/moulding_machines', 'Masterdata\Manufacturing\MouldingMachinesController');
 ```
 
 ```
 RouteServiceProvider.php
 
-$router->model('machines', 'App/Repositories/Masterdata/Manufacturing/SiteMachine');
+$router->model('moulding_machines', 'App/Repositories/Masterdata/Manufacturing/MouldingMachine');
 ```
 
-If all worked out correctly you should be able to see your newly created CRUD pages at yourdomain/masterdata/manufacturing/machines url.
+If all worked out correctly you should be able to see your newly created CRUD pages at yourdomain/masterdata/manufacturing/moulding_machines url.
 
 
 ### Credits

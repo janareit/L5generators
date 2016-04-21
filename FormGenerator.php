@@ -26,10 +26,11 @@ class FormGenerator
      * @param string $name
      * @param string $fields
      */
-    public function __construct($name = null, $fields = null)
+    public function __construct($name = null, $fields = null, $responsive)
     {
         $this->name = $name;
         $this->fields = $fields;
+        $this->responsive = $responsive;
     }
 
     /**
@@ -63,6 +64,6 @@ class FormGenerator
      */
     public function renderFromFields()
     {
-        return (new FieldsDumper($this->fields))->render();
+        return (new FieldsDumper($this->fields, $this->responsive))->render();
     }
 }

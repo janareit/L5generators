@@ -55,6 +55,7 @@ class ScaffoldCommand extends Command
             ['fields', null, InputOption::VALUE_OPTIONAL, 'The fields of migration. Separated with comma (,).', null],
             ['prefix', null, InputOption::VALUE_OPTIONAL, 'The prefix path & routes.', null],
             ['no-question', null, InputOption::VALUE_NONE, 'Don\'t ask any question.', null],
+            ['responsive', 'r', InputOption::VALUE_NONE, 'Scaffold responsive views.', null],
             ['force', 'f', InputOption::VALUE_NONE, 'Force the creation if file already exists.', null],
             ['extends', 'e', InputOption::VALUE_OPTIONAL, 'Which master layout to use.', null],
         ];

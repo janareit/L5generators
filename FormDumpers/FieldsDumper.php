@@ -19,9 +19,10 @@ class FieldsDumper
      *
      * @param string $fields
      */
-    public function __construct($fields)
+    public function __construct($fields, $responsive)
     {
         $this->fields = $fields;
+        $this->responsive = $responsive;
     }
 
     /**
@@ -108,7 +109,9 @@ class FieldsDumper
                 continue;
             }
 
-            $results .= Stub::createFromPath(__DIR__.'/../Stubs/scaffold/row.stub', [
+            $scaffold_type = $this->responsive ? 'scaffold-responsive' : 'scaffold-table';
+
+            $results .= Stub::createFromPath(__DIR__.'/../Stubs/'.$scaffold_type.'/row.stub', [
                 'label' => ucwords($name),
                 'column' => $name,
                 'var' => $var,
